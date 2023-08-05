@@ -19,11 +19,11 @@ Despite that, computer can still do something to understand unstructured human l
 The typical work flow:
 - capture text data: convert different sources of data into plain text
 - normalization: start with a plain text sentence, normalize it by converting to lower case and removing puntuations
-- tokenization: split the sentence into words using a tokenizer
+- tokenization: split the sentence into words(tokens) using a tokenizer
 - remove stop word to reduce the vocabulary you have to deal with
 - apply lemmatization and stemming to reduce the words to the stem form
 
-#### capture text data
+#### 1.1. capture text data
 Typical source of data including 
 - .txt file(plain text): os library: can be read using python built in file input mechanism
 ```python
@@ -55,7 +55,7 @@ Typical source of data including
 }
 ```
 
-#### text normalization
+#### 1.2. text normalization
 - convert all letters into lower case
 ```python
 {
@@ -73,6 +73,38 @@ Typical source of data including
   text = re.sub(r'[^a-zA-Z0-9]', ' ', text)
 }
 ```
+
+#### 1.3 tokenization
+##### words tokenization
+We can split the sentence into words using string method split():
+```python
+{
+  #split the string by blank space using string method split
+  words =  text.split()
+}
+```
+
+We can also use the word_tokenize() function from the NLTK(natural language toolkit) library
+```python
+{
+  from nltk.tokenize import word_tokenize
+
+  #split text string into a list of words
+  words = word_tokenize(text)
+}
+```
+##### sentence tokenization
+We can split the text string into list of sentences using sent_tokenize() function
+```python
+{
+  from nltk.tokenize import sent_tokenize
+
+  #split text string into a list of sentences
+  sents = sent_tokenize(text)
+}
+```
+
+[The NLTK.tokenize package](https://www.nltk.org/api/nltk.tokenize.html)
 
 
 
