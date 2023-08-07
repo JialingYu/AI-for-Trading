@@ -14,98 +14,125 @@ Despite that, computer can still do something to understand unstructured human l
 2. features extraction: extract and produce features which are appropriate for the type of model you are going to use
 3. modeling: build statistical or machine learing model, train the model with data using optimization, predict unseen data using the model
 
-### 1. text processing: convert natural language sentence into a sequence of normalized tokens
+### 1. text processing
+
+convert natural language sentence into a sequence of normalized words
 
 The typical work flow:
 - capture text data: convert different sources of data into plain text
 - normalization: start with a plain text sentence, normalize it by converting to lower case and removing puntuations
 - tokenization: split the sentence into words(tokens) using a tokenizer
-- remove stop word to reduce the vocabulary you have to deal with
+- stop words removal: remove stop word to reduce the vocabulary you have to deal with
 - apply lemmatization and stemming to reduce the words to the stem form
 
 #### 1.1. capture text data
 Typical source of data including 
 - .txt file(plain text): os library: can be read using python built in file input mechanism
 ```python
-{
-  import os
+import os
 
-  with open ("sample.txt", r) as f:
+#Read in a plain text file
+with open(os.path.join("data", "hieroglyph.txt"), "r") as f:
     text = f.read()
     print(text)
-}
 ```
 - .csv file(Tabular data): 
 ```python
-{
-  import pandas as pd
+import pandas as pd
 
-  #read the tabular csv file into dataframe
-  df = pd.read_csv("sample.csv")
-}
+#read the tabular csv file into dataframe
+df = pd.read_csv("sample.csv")
 ```
 - online resourse: requests library: requests.get()
 ```python
-{
-  import requests
+import requests
 
-  #get data from an API
-  text = requests.get(API url)
-  res = text.json()
-}
+#get data from an API
+text = requests.get(API url)
+res = text.json()
 ```
 
 #### 1.2. text normalization
-- convert all letters into lower case
+- convert all letters into lower case:
 ```python
-{
-  #use string method lower() to lower the text
-  text = text.lower()
-}
+#use string method lower() to lower the text
+text = text.lower()
 ```
 - remove punctuation:
   
 ```python
-{
-  import re
+import re
 
-  #substitute punctuations with blank space
-  text = re.sub(r'[^a-zA-Z0-9]', ' ', text)
-}
+#substitute punctuations with blank space
+text = re.sub(r'[^a-zA-Z0-9]', ' ', text)
 ```
 
-#### 1.3 tokenization
+#### 1.3. tokenization
 ##### words tokenization
 We can split the sentence into words using string method split():
+
 ```python
-{
-  #split the string by blank space using string method split
-  words =  text.split()
-}
+#split the string by blank space using string method split
+words =  text.split()
 ```
 
-We can also use the word_tokenize() function from the NLTK(natural language toolkit) library
-```python
-{
-  from nltk.tokenize import word_tokenize
+We can also use the word_tokenize() function from the NLTK(natural language toolkit) library:
 
-  #split text string into a list of words
-  words = word_tokenize(text)
-}
+```python
+from nltk.tokenize import word_tokenize
+
+#split text string into a list of words
+words = word_tokenize(text)
 ```
 ##### sentence tokenization
-We can split the text string into list of sentences using sent_tokenize() function
-```python
-{
-  from nltk.tokenize import sent_tokenize
+We can split the text string into list of sentences using sent_tokenize() function:
 
-  #split text string into a list of sentences
-  sents = sent_tokenize(text)
-}
+```python
+from nltk.tokenize import sent_tokenize
+
+#split text string into a list of sentences
+sents = sent_tokenize(text)
 ```
 
 [The NLTK.tokenize package](https://www.nltk.org/api/nltk.tokenize.html)
 
+*A Jupternotebook for scraping a webpage:*
+https://github.com/udacity/AIND-NLP/blob/master/text_processing.ipynb
+
+#### 1.4. stop words removal
+Stop words are uninformative words that ocurrs frequently but do not provide much meaning. We want to remove them so that we can reduce the amount of words we have to deal with.
+
+The words that nltk consider as stop words in English:
+```python
+from nltk.corpus import stopwords
+print(stopwords.words('english'))
+```
+We can use list comprehension plus filtering condition to remove stop words from a list "words":
+```python
+words_removed = [for w in words if w not in stopwords.words('english')]
+```
+
+#### part-of-speech(PoS) tagging
+
+Identifying how words are used in the sentence can help us better understand what is being said. 
+
+We can use the nltk.tag.pos_tag(tokens) function to tag a given list of tokens. The function return a list of tuples of each word and its tag.
+```python
+import nltk
+from nltk.tag import pos_tag
+from nltk.tokenize import word_tokenize
+
+nltk.download('punkt')
+nltk.download('averaged_perceptron_tagger')
+#tokenize the string
+tokens = word_tokenize('I say something')
+#tag the parts of speech
+tags = pos_tag(tokens)
+print(tags)
+```
+
+Part of speech tagging can be used to parse sentence.  
+For more about tagging, one can refer to the [nltk book](https://www.nltk.org/book/ch05.html).
 
 
 
