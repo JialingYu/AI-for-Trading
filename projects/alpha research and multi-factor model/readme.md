@@ -1,1 +1,1 @@
-# multifactor
+# Multifactor model
