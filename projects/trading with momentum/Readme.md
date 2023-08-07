@@ -1,4 +1,4 @@
-# Trading with momentum project workflow
+# Trading with momentum project
 ## main trading strategy
 > For each month-end observation period, rank the stocks by previous return, long the top performing stocks and short the bottom performing stocks.
 
