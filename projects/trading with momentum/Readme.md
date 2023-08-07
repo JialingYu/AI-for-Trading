@@ -27,4 +27,4 @@
    null hypothesis $H_0$: the mean of portfolio return from the signal is zero.
 
 ## conclusion:
-If we set the level of significant $\alpha = 0.05$, the computed p-value is 0.073359. Hence we can not reject the null hypothesis, which indicates the mean of the portfolio return of our signal is zero.![image](https://github.com/JialingYu/artificial-intelligent-with-trading-nano-degree/assets/59286851/8ad4d132-5e2b-4c7a-9798-8d013bc2e441)
+If we set the level of significant $\alpha = 0.05$, the computed p-value is 0.073359. Hence we can not reject the null hypothesis, which indicates the mean of the portfolio return of our signal is zero.
