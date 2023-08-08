@@ -151,7 +151,7 @@ Named entity recogniztion can be used to search for new articles on campanys of 
 Natural lanugage use different forms of words but with similar meaning for grammatical reasons, e.g, is, was, are. Stemming and Lemmatization have similar goal, which is to reduce the different forms of words into its stem. For example, reduce is, are, was to be. The difference is that stemming just cut off the end of the words and do not use context, while lemmatization use a dictionary to perform the task and reduce the words according to their surrounding context. For example, for the word 'see', stemming would reduce it into 's' while lemmatization would reduce it into 'see' or 'saw' depending on whether the use of the token is a verb or a noun. Since stemming do not require a dictionary, it is usually easier to implement and run faster.
 
 **stemming**
-nltk has a few different stemmer [nltk stemmer](https://www.nltk.org/api/nltk.stem.html) including the follwing `PorterStemmer`.
+nltk has a few different stemmer [nltk stemmer](https://www.nltk.org/api/nltk.stem.html) including the follwing `PorterStemmer` class.
 ```python
 from nltk.stem.porter import PorterStemmer
 #reduce words to their stem
@@ -161,7 +161,7 @@ print(stemmed)
 ```
 
 **lemmatization**
-NLTK by default use the `WordNet Lemmatizer`, which lemmatize using WordNet's built-in morphy function. Return the input word unchanged if it cannot be found in WorldNet. A Lemmatizer by default need to know the part of speech for each word it is trying to transform, which can be specified by the pos parameter. By default pos = 'n' which stands for noun.
+NLTK by default use the `WordNetLemmatizer` class, which lemmatize using WordNet's built-in morphy function. Return the input word unchanged if it cannot be found in WorldNet. A Lemmatizer by default need to know the part of speech for each word it is trying to transform, which can be specified by the pos parameter. By default pos = 'n' which stands for noun.
 ```python
 from nltk.stem.wordnet import WordNetLemmatizer
 #reduce words to their stem
