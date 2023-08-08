@@ -14,7 +14,9 @@ Despite that, computer can still do something to understand unstructured human l
 2. features extraction: extract and produce features which are appropriate for the type of model you are going to use
 3. modeling: build statistical or machine learing model, train the model with data using optimization, predict unseen data using the model
 
-### 1. Text processing [A notebook for text processing tweets](notebooks/process_tweets.ipynb)
+### 1. Text processing 
+[A notebook for text processing tweets](notebooks/process_tweets.ipynb)
+[A notebook for text processing](notebooks/text_processing.ipynb)
 
 convert natural language sentence into a sequence of normalized words
 
