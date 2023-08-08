@@ -9,12 +9,12 @@ Despite that, computer can still do something to understand unstructured human l
 - parse sentence to extract relevant parts of sentence, questions, statements
 - analyse document vto find frequent and rare words, assess tone and sentiment, cluster and group relevant documents together.
 
-## NlP pipeline
+## NLP pipeline
 1. text processing: take raw input text, clean and normalize it, convert it into a form that suitable for feature extraction
 2. features extraction: extract and produce features which are appropriate for the type of model you are going to use
 3. modeling: build statistical or machine learing model, train the model with data using optimization, predict unseen data using the model
 
-### 1. text processing
+### 1. Text processing
 
 convert natural language sentence into a sequence of normalized words
 
@@ -23,9 +23,9 @@ The typical work flow:
 - normalization: start with a plain text sentence, normalize it by converting to lower case and removing puntuations
 - tokenization: split the sentence into words(tokens) using a tokenizer
 - stop words removal: remove stop word to reduce the vocabulary you have to deal with
-- apply lemmatization and stemming to reduce the words to the stem form
+- stemming and lemmatization: apply lemmatization and stemming to reduce the words to the stem form
 
-#### 1.1. capture text data
+#### 1.1. Capture text data
 Typical source of data including 
 - .txt file(plain text): os library: can be read using python built in file input mechanism
 ```python
@@ -52,7 +52,7 @@ text = requests.get(API url)
 res = text.json()
 ```
 
-#### 1.2. text normalization
+#### 1.2. Text normalization
 - convert all letters into lower case:
 ```python
 #use string method lower() to lower the text
@@ -67,7 +67,7 @@ import re
 text = re.sub(r'[^a-zA-Z0-9]', ' ', text)
 ```
 
-#### 1.3. tokenization
+#### 1.3. Tokenization
 ##### words tokenization
 We can split the sentence into words using string method split():
 
@@ -99,7 +99,7 @@ sents = sent_tokenize(text)
 *A Jupternotebook for scraping a webpage:*
 https://github.com/udacity/AIND-NLP/blob/master/text_processing.ipynb
 
-#### 1.4. stop words removal
+#### 1.4. Stop words removal
 Stop words are uninformative words that ocurrs frequently but do not provide much meaning. We want to remove them so that we can reduce the amount of words we have to deal with.
 
 The words that nltk consider as stop words in English:
@@ -116,7 +116,7 @@ words_removed = [for w in words if w not in stopwords.words('english')]
 
 Identifying how words are used in the sentence can help us better understand what is being said. 
 
-We can use the nltk.tag.pos_tag(tokens) function to tag a given list of tokens. The function return a list of tuples of each word and its tag.
+We can use the `nltk.tag.pos_tag(tokens)` function to tag a given list of tokens. The function return a list of tuples of each word and its tag.
 ```python
 import nltk
 from nltk.tag import pos_tag
@@ -131,8 +131,45 @@ tags = pos_tag(tokens)
 print(tags)
 ```
 
-Part of speech tagging can be used to parse sentence.  
-For more about tagging, one can refer to the [nltk book](https://www.nltk.org/book/ch05.html).
+- Part of speech tagging can be used to parse sentence.  
+- For more about tagging, one can refer to the [nltk book](https://www.nltk.org/book/ch05.html).
+
+#### Named entity recognition
+A named entity is a real world object such as a person, organization, that can be represented by a name. Named-entity recognition is a subtask of information extraction that aims to locate and classify named entities in an unstructured text into predefined categories like person, organizations.    
+After perform part of speech tagging on a list of tokens, we get a list of POS-tagged tokens. We can then perform named entity recognition on the list using `nltk.ne_chunk()` function. This function takes a list of POS-tagged tokens as inputs and return a tree of named entity.
+
+```python
+from nltk import pos_tag, ne_chunk
+from nltk.tokenize import word_tokenize
+#word tokenize the sentence, and then tag parts of speech, and then identify named-entity
+ne_chunk(pos_tag(word_tokenize('Jialing is studying Udacity nano degree program in Sweden')))
+```
+
+Named entity recogniztion can be used to search for new articles on campanys of interest.
+
+#### 1.5. Lemmatization and stemming
+Natural lanugage use different forms of words but with similar meaning for grammatical reasons, e.g, is, was, are. Stemming and Lemmatization have similar goal, which is to reduce the different forms of words into its stem. For example, reduce is, are, was to be. The difference is that stemming just cut off the end of the words and do not use context, while lemmatization use a dictionary to perform the task and reduce the words according to their surrounding context. For example, for the word 'see', stemming would reduce it into 's' while lemmatization would reduce it into 'see' or 'saw' depending on whether the use of the token is a verb or a noun. Since stemming do not require a dictionary, it is usually easier to implement and run faster.
+
+**stemming**
+nltk has a few different stemmer [nltk stemmer](https://www.nltk.org/api/nltk.stem.html) including the follwing `PorterStemmer`.
+```python
+from nltk.stem.porter import PorterStemmer
+#reduce words to their stem
+words=['was','is','goes']
+stemmed = [PorterStemmer().stem(w) for w in words]
+print(stemmed)
+```
+
+**lemmatization**
+NLTK by default use the `WordNet Lemmatizer`, which lemmatize using WordNet's built-in morphy function. Return the input word unchanged if it cannot be found in WorldNet. A Lemmatizer by default need to know the part of speech for each word it is trying to transform, which can be specified by the pos parameter. By default pos = 'n' which stands for noun.
+```python
+from nltk.stem.wordnet import WordNetLemmatizer
+#reduce words to their stem
+words=['was','is','goes']
+stemmed = [WordNetLemmatizer().lemmatize(w, pos = 'v') for w in words]
+print(stemmed)
+```
+Here is [a webpage for more about  stemming and lemmatization.](https://nlp.stanford.edu/IR-book/html/htmledition/stemming-and-lemmatization-1.html)
 
 
 
