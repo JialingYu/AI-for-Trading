@@ -232,6 +232,8 @@ The dollar sign `$` matches the characters only when they appear at the end of t
 `*` matches the preceeding character 0 or more times    
 `+` matches the preceeding character 1 or more times.
 
+Here is a [notebook for simple_metacharacters.](notebooks/simple_metacharacters.ipynb)
+
 
 
 
