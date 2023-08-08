@@ -199,7 +199,7 @@ For long term investment, we need to read financial reports such as 10-k reports
 #### Create regular expression using python
 Regular expression(regex, regexp) is a sequence of characters that specify a match pattern in text. Such paterns are used by string-searching-algorithm for "find" or “find and replace” operation on strings.
 
-Regular expression can be used to match letters and metacharacters:
+##### Regular expression can be used to match letters and metacharacters:
 
 In order to find words using regular expression in a text, we first create a regular expression object from raw string using `compile()` fucntion from the python `re` module, and then use the `finditer()` object method to find the iterations of the regular expression. The function returns an iterator object which we can iterate through.
 
@@ -210,11 +210,27 @@ Here is a notebook of basic workflow of [creating regular expression to find wor
 Meta characters specify special meaning and can not be searched directly. We need to use backslash to escape them first.
 Here is a [notebook for meta characters](notebooks/finding_metacharacters.ipynb)
 
-Regular expression can be used to match more complicated pattern:
+##### Regular expression can be used to match more complicated pattern:
+
 We have seen before that backlash can be used to escape all metacharacters. It can also be followed by some different characters to signal different special sequences. For example, `\d` signals digital characters, `\D` signals non digital characters, `\s` signals whitespace character, `\S' signals non whitespace  characters, etc.
 
 Here is a [notebook searching for simple patterns](notebooks/simple_patterns.ipynb).
 
+We can use the special expression `\b` to indicate word boundary. A word in this case is a sequence of alphanumeric characters(0-9, a-z, A-Z, _) while a word boundary are white space, non alphanumeric characters or the beginning or ending of a string. 
+
+Here is a [notebook for word boundary.](notebooks/word_boundaries.ipynb)
+
+Regular expressions use metacharacters to give special instruction. Regular expression use the following metacharacters `. ^ $ \ ？ * [ ] { } ( ) |`.    
+The dot `.` matches any characters except new line `\n`    
+The caret `^` matches the characters only when they appear at the beginning of the string    
+The dollar sign `$` matches the characters only when they appear at the end of the string    
+`[]` is used for group, the character inside the group appears once, e.g., `[a-z]` matches one lower character    
+`|` is used in a group indicates 'or', e.g., `[a|b]` matches a or b    
+`{m}` matches the preceeding character m times    
+`{m,n}` matches the preceeding character at least m times at most n times    
+`?` matches the preceeding character 0 or 1 time, i.e., the preceeding character is optional  
+`*` matches the preceeding character 0 or more times    
+`+` matches the preceeding character 1 or more times.
 
 
 
