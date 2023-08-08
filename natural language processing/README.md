@@ -178,6 +178,32 @@ Here is [a webpage for more about  stemming and lemmatization.](https://nlp.stan
 
 
 
+### 2. Feature Extraction
+2.1. bag of words
+2.2. TF-IDF
+2.3. one hot encoding
+2.4. word embedding
+2.5. Word2Vec
+2.6. GloVe
+2.7. embedding for deep learning
+2.8. t-SNE
+
+
+### 3. Finacial statements
+For long term investment, we need to read financial reports such as 10-k reports from SEC(u.s. security and exchange commissions) for company information. The EDGAR database of SEC contains all financial reports. We can visit [the website of SEC](https://www.sec.gov/) to visit the EDGAR database, and then search each company by its ticker symbol, e.g., AAPL for apple. 
+
+
+- create regular expression using python
+- use regular expression to process financial statements
+
+#### Create regular expression using python
+In order to find regular expression in a text, we first create a regular expression object using `compile()` fucntion from the python `re` module, and then use the `finditer()` object method to find the iterations of the regular expression. The function returns an iterator object which we can iterate through.
+
+
+
+
+
+
 
 
 
