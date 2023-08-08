@@ -197,12 +197,23 @@ For long term investment, we need to read financial reports such as 10-k reports
 - use regular expression to process financial statements
 
 #### Create regular expression using python
-In order to find regular expression in a text, we first create a regular expression object from raw string using `compile()` fucntion from the python `re` module, and then use the `finditer()` object method to find the iterations of the regular expression. The function returns an iterator object which we can iterate through.
+Regular expression(regex, regexp) is a sequence of characters that specify a match pattern in text. Such paterns are used by string-searching-algorithm for "find" or “find and replace” operation on strings.
+
+Regular expression can be used to match letters and metacharacters:
+
+In order to find words using regular expression in a text, we first create a regular expression object from raw string using `compile()` fucntion from the python `re` module, and then use the `finditer()` object method to find the iterations of the regular expression. The function returns an iterator object which we can iterate through.
 
 We need to use raw string to create regular expression since regular expression escape special characters(meta characters) just as string, thus we need to use raw string(backlash '\' would not be used to escape) to avoid conflict. [notebooks for raw strings](notebooks/raw_strings.ipynb)
 
 Here is a notebook of basic workflow of [creating regular expression to find words](notebooks/finding_words.ipynb)
 
+Meta characters specify special meaning and can not be searched directly. We need to use backslash to escape them first.
+Here is a [notebook for meta characters](notebooks/finding_metacharacters.ipynb)
+
+Regular expression can be used to match more complicated pattern:
+We have seen before that backlash can be used to escape all metacharacters. It can also be followed by some different characters to signal different special sequences. For example, `\d` signals digital characters, `\D` signals non digital characters, `\s` signals whitespace character, `\S' signals non whitespace  characters, etc.
+
+Here is a [notebook searching for simple patterns](notebooks/simple_patterns.ipynb).
 
 
 
