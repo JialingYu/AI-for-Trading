@@ -16,6 +16,7 @@ Despite that, computer can still do something to understand unstructured human l
 
 ### 1. Text processing 
 [A notebook for text processing tweets](notebooks/process_tweets.ipynb)
+
 [A notebook for text processing](notebooks/text_processing.ipynb)
 
 convert natural language sentence into a sequence of normalized words
