@@ -197,8 +197,11 @@ For long term investment, we need to read financial reports such as 10-k reports
 - use regular expression to process financial statements
 
 #### Create regular expression using python
-In order to find regular expression in a text, we first create a regular expression object using `compile()` fucntion from the python `re` module, and then use the `finditer()` object method to find the iterations of the regular expression. The function returns an iterator object which we can iterate through.
+In order to find regular expression in a text, we first create a regular expression object from raw string using `compile()` fucntion from the python `re` module, and then use the `finditer()` object method to find the iterations of the regular expression. The function returns an iterator object which we can iterate through.
 
+We need to use raw string to create regular expression since regular expression escape special characters(meta characters) just as string, thus we need to use raw string(backlash '\' would not be used to escape) to avoid conflict. [notebooks for raw strings](notebooks/raw_strings.ipynb)
+
+Here is a notebook of basic workflow of [creating regular expression to find words](notebooks/finding_words.ipynb)
 
 
 
