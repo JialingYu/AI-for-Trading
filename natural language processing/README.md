@@ -211,21 +211,21 @@ Meta characters specify special meaning and can not be searched directly. We nee
 Here is a [notebook for meta characters](notebooks/finding_metacharacters.ipynb)
 
 ##### Regular expression can be used to match more complicated pattern:
-
-We have seen before that backlash can be used to escape all metacharacters. It can also be followed by some different characters to signal different special sequences. For example, `\d` signals digital characters, `\D` signals non digital characters, `\s` signals whitespace character, `\S' signals non whitespace  characters, etc.
+- We have seen before that backlash can be used to escape all metacharacters. It can also be followed by some different characters to signal different special sequences. For example, `\d` signals digital characters, `\D` signals non digital characters, `\s` signals whitespace character, `\S' signals non whitespace  characters, etc.
 
 Here is a [notebook searching for simple patterns](notebooks/simple_patterns.ipynb).
 
-We can use the special expression `\b` to indicate word boundary. A word in this case is a sequence of alphanumeric characters(0-9, a-z, A-Z, _) while a word boundary are white space, non alphanumeric characters or the beginning or ending of a string. 
+- We can use the special expression `\b` to indicate word boundary. A word in this case is a sequence of alphanumeric characters(0-9, a-z, A-Z, _) while a word boundary are white space, non alphanumeric characters or the beginning or ending of a string. 
 
 Here is a [notebook for word boundary.](notebooks/word_boundaries.ipynb)
 
-Regular expressions use metacharacters to give special instruction. Regular expression use the following metacharacters `. ^ $ \ ？ * [ ] { } ( ) |`.    
+- Regular expressions use metacharacters to give special instruction. Regular expression use the following metacharacters `. ^ $ \ ？ * [ ] { } ( ) |`.    
 The dot `.` matches any characters except new line `\n`    
 The caret `^` matches the characters only when they appear at the beginning of the string    
 The dollar sign `$` matches the characters only when they appear at the end of the string    
-`[]` is used for group, the character inside the group appears once, e.g., `[a-z]` matches one lower character    
-`|` is used in a group indicates 'or', e.g., `[a|b]` matches a or b    
+`[]` indicates a set of characters, one character within the set is matched, e.g., `[a-z]` matches one lower character. Special characters within a set have no special meaning anymore, and the character  itself is matched.
+`|` is used in a set indicates 'or', e.g., `[a|b]` matches a or b
+`(...)` indicates the start and end of a group and matches whatever regular expression within the group. After matched, each group can be retrieved within a string using `\number`
 `{m}` matches the preceeding character m times    
 `{m,n}` matches the preceeding character at least m times at most n times    
 `?` matches the preceeding character 0 or 1 time, i.e., the preceeding character is optional  
@@ -237,6 +237,9 @@ Here is a [notebook for simple_metacharacters.](notebooks/simple_metacharacters.
 Here is a [notebook for character_sets](notebooks/character_sets.ipynb)
 
 Here is a [notebook for finding_complicated_patterns](notebooks/finding_complicated_patterns.ipynb)
+
+- The regular expression object `regex` has a method `sub(raw_string, sample_text)` which can be used to substitute every match of regular expression in the sample_text by raw string.
+  Here is a notebook for substitution
 
 
 
