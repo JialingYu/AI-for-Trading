@@ -234,6 +234,12 @@ The dollar sign `$` matches the characters only when they appear at the end of t
 
 Here is a [notebook for simple_metacharacters.](notebooks/simple_metacharacters.ipynb)
 
+Here is a [notebook for character_sets](notebooks/character_sets.ipynb)
+
+Here is a [notebook for finding_complicated_patterns](notebooks/finding_complicated_patterns.ipynb)
+
+
+
 
 
 
