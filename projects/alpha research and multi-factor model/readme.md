@@ -1,4 +1,6 @@
 # Multifactor model
+Here is the [project noteook.](project_4_starter.ipynb)
+
 ## main strategy
 > create a alpha model and a risk model, and then use them to create a portfolio which trades as close as to the alpha model while limiting risk as measured by the risk model
 ### workflow
