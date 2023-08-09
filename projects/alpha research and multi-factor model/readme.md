@@ -1,4 +1,4 @@
-# Multifactor model
+# Multi-factor Model
 Here is the [project notebook.](project_4_starter.ipynb)
 
 ## Main idea
