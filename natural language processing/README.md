@@ -244,7 +244,7 @@ Here is a [notebook for finding_complicated_patterns](notebooks/finding_complica
   
   Here is a [python regular expression document.](https://docs.python.org/2/library/re.html#module-re)
 
-  Here is a notebook of using regular expression to extract item 1A, 7 and 7A from 10-K reports: notebooks/applying_regexes_10ks.ipynb
+  Here is a [notebook of using regular expression to extract item 1A, 7 and 7A from 10-K reports: ](notebooks/applying_regexes_10ks.ipynb)
   
   
   
