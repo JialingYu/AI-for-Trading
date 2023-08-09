@@ -189,15 +189,15 @@ Here is [a webpage for more about  stemming and lemmatization.](https://nlp.stan
 2.8. t-SNE
 
 
-### 3. Finacial statements
+### 3. Use NLP to extract financial info from 10-Ks
+
 For long term investment, we need to read financial reports such as 10-k reports from SEC(u.s. security and exchange commissions) for company information. The EDGAR database of SEC contains all financial reports. We can visit [the website of SEC](https://www.sec.gov/) to visit the EDGAR database, and then search each company by its ticker symbol, e.g., AAPL for apple. 
 
+#### use regex to process .txt file
+One way to extract data from 10-K reports is to use regular expression to process the `.txt` file of the 10-K reports. If the 10-K report is in HTML format, we can first transform it into txt format, and then process it.
 
-- create regular expression using python
-- use regular expression to process financial statements
-
-#### Create regular expression using python
-Regular expression(regex, regexp) is a sequence of characters that specify a match pattern in text. Such paterns are used by string-searching-algorithm for "find" or “find and replace” operation on strings.
+In the following we will show how to create regular expression using python.    
+Regular expression(regex, regexp) is a sequence of characters that specify a match pattern in text. Such patterns are used by string-searching-algorithm for "find" or “find and replace” operation on strings.
 
 ##### Regular expression can be used to match letters and metacharacters:
 
@@ -245,6 +245,10 @@ Here is a [notebook for finding_complicated_patterns](notebooks/finding_complica
   Here is a [python regular expression document.](https://docs.python.org/2/library/re.html#module-re)
 
   Here is a [notebook of using regular expression to extract item 1A, 7 and 7A from 10-K reports: ](notebooks/applying_regexes_10ks.ipynb)
+
+As we can see from above notebook, using regular expression to process txt file and extract info from scratch is difficult. Luckily we have the `beautifulsoup` library which can be used to directly process HTML website.
+
+#### use `beautifulsoup` to process 10-Ks in HTML or XML format.
   
   
   
