@@ -248,9 +248,19 @@ Here is a [notebook for finding_complicated_patterns](notebooks/finding_complica
 
 As we can see from above notebook, using regular expression to process txt file and extract info from scratch is difficult. Luckily we have the `beautifulsoup` library which can be used to directly process HTML website.
 
-#### use `beautifulsoup` to process 10-Ks in HTML or XML format.
+#### Use `beautifulsoup` to process 10-Ks in HTML or XML format.
 
 We can use the `beautifulsoup` constructor to parse a html website. 
+
+- We can open a file as an open filehandle and pass it to the `BeautifulSoup` constructor to construct a BeautifulSoup object. And then we can access the html tags as an attribute of the object. We can also take the tag object as a dictionary and access the attributes of the tags using the attributes as a key.
+
+Here is a [notebook for this process.](notebooks/navigating_the_parse_tree.ipynb)
+
+- Using the tag as an attribute only show the first result of the html tag. In order to find all html tag, we can use the `find_all()` method of the BeautifulSoup object. For example, `object.find_all('h1', id='intro')` find all `h1` tags with the intro id; `object.find_all(['h1','p'])` finds all h1 and p tags; `object.find_all(id='intro')` finds all tags with id intro. However, for the class attribute, we cannot just pass 'class' to the find_all function since class itself is a reserved word in python. We will instead use 'class_' to do this. The `find_all()` function can also understand regular expression, thus we can pass to it a regular expression object `re.compile(r'\.')`.
+
+
+
+
   
   
   
