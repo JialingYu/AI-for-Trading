@@ -224,7 +224,7 @@ The dot `.` matches any characters except new line `\n`
 The caret `^` matches the characters only when they appear at the beginning of the string    
 The dollar sign `$` matches the characters only when they appear at the end of the string    
 `[]` indicates a set of characters, one character within the set is matched, e.g., `[a-z]` matches one lower character. Special characters within a set have no special meaning anymore, and the character  itself is matched.
-`|` is used in a set indicates 'or', e.g., `[a|b]` matches a or b    
+`|` indicates 'or', e.g., `[a|b]` matches a or b    
 `(...)` indicates the start and end of a group and matches whatever regular expression within the group. After matched, each group can be retrieved within a string using `\number`
 `{m}` matches the preceeding character m times    
 `{m,n}` matches the preceeding character at least m times at most n times    
@@ -252,11 +252,13 @@ As we can see from above notebook, using regular expression to process txt file 
 
 We can use the `beautifulsoup` constructor to parse a html website. 
 
-- We can open a file as an open filehandle and pass it to the `BeautifulSoup` constructor to construct a BeautifulSoup object. And then we can access the html tags as an attribute of the object. We can also take the tag object as a dictionary and access the attributes of the tags using the attributes as a key.
+- We can open a file as an open filehandle and pass it to the `BeautifulSoup` constructor to construct a BeautifulSoup object. And then we can access the html tags as an attribute of the object. We can also take the tag object as a dictionary and access the attributes of the tags using the attributes as a key. In addition, we can use the `get_text()` tag method to only get the content of a tag without its tag label.
 
 Here is a [notebook for this process.](notebooks/navigating_the_parse_tree.ipynb)
 
-- Using the tag as an attribute only show the first result of the html tag. In order to find all html tag, we can use the `find_all()` method of the BeautifulSoup object. For example, `object.find_all('h1', id='intro')` find all `h1` tags with the intro id; `object.find_all(['h1','p'])` finds all h1 and p tags; `object.find_all(id='intro')` finds all tags with id intro. However, for the class attribute, we cannot just pass 'class' to the find_all function since class itself is a reserved word in python. We will instead use 'class_' to do this. The `find_all()` function can also understand regular expression, thus we can pass to it a regular expression object `re.compile(r'\.')`.
+- Using the tag as an attribute only show the first result of the html tag. In order to find all html tag, we can use the `find_all()` method of the BeautifulSoup object. For example, `object.find_all('h1', id='intro')` find all `h1` tags with the intro id; `object.find_all(['h1','p'])` finds all h1 and p tags; `object.find_all(id='intro')` finds all tags with id intro. However, for the class attribute, we cannot just pass 'class' to the find_all function since class itself is a reserved word in python. We will instead use 'class_' to do this. The `find_all()` function can also understand regular expression, thus we can pass to it a regular expression object `re.compile(r'^h')`. This is used to find all tags starts with letter h. In addition, if we set the `recursive = Flase` attribute of the `find_all('head', recursive=False)` tag method, we will only search the direct children of the tag for 'head' tag instead of all children of the tag.
+
+Here is [an exercise notebook for it.](notebooks/coding_exercise.ipynb)
 
 
 
