@@ -224,7 +224,7 @@ The dot `.` matches any characters except new line `\n`
 The caret `^` matches the characters only when they appear at the beginning of the string    
 The dollar sign `$` matches the characters only when they appear at the end of the string    
 `[]` indicates a set of characters, one character within the set is matched, e.g., `[a-z]` matches one lower character. Special characters within a set have no special meaning anymore, and the character  itself is matched.
-`|` is used in a set indicates 'or', e.g., `[a|b]` matches a or b
+`|` is used in a set indicates 'or', e.g., `[a|b]` matches a or b    
 `(...)` indicates the start and end of a group and matches whatever regular expression within the group. After matched, each group can be retrieved within a string using `\number`
 `{m}` matches the preceeding character m times    
 `{m,n}` matches the preceeding character at least m times at most n times    
@@ -249,6 +249,8 @@ Here is a [notebook for finding_complicated_patterns](notebooks/finding_complica
 As we can see from above notebook, using regular expression to process txt file and extract info from scratch is difficult. Luckily we have the `beautifulsoup` library which can be used to directly process HTML website.
 
 #### use `beautifulsoup` to process 10-Ks in HTML or XML format.
+
+We can use the `beautifulsoup` constructor to parse a html website. 
   
   
   
