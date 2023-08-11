@@ -193,13 +193,13 @@ Here is [a webpage for more about  stemming and lemmatization.](https://nlp.stan
 
 For long term investment, we need to read financial reports such as 10-k reports from SEC(u.s. security and exchange commissions) for company information. The EDGAR database of SEC contains all financial reports. We can visit [the website of SEC](https://www.sec.gov/) to visit the EDGAR database, and then search each company by its ticker symbol, e.g., AAPL for apple. 
 
-#### use regex to process .txt file
-One way to extract data from 10-K reports is to use regular expression to process the `.txt` file of the 10-K reports. If the 10-K report is in HTML format, we can first transform it into txt format, and then process it.
+#### 3.1. Use regex to process .txt file
+One way to extract data from 10-K reports is to use regular expression to process the .txt file of the 10-K reports. If the 10-K report is in HTML format, we can first transform it into txt format, and then process it.
 
 In the following we will show how to create regular expression using python.    
 Regular expression(regex, regexp) is a sequence of characters that specify a match pattern in text. Such patterns are used by string-searching-algorithm for "find" or “find and replace” operation on strings.
 
-##### Regular expression can be used to match letters and metacharacters:
+##### 3.1.1. Regular expression can be used to match letters and metacharacters:
 
 In order to find words using regular expression in a text, we first create a regular expression object from raw string using `compile()` fucntion from the python `re` module, and then use the `finditer()` object method to find the iterations of the regular expression. The function returns an iterator object which we can iterate through.
 
@@ -210,7 +210,7 @@ Here is a notebook of basic workflow of [creating regular expression to find wor
 Meta characters specify special meaning and can not be searched directly. We need to use backslash to escape them first.
 Here is a [notebook for meta characters](notebooks/finding_metacharacters.ipynb)
 
-##### Regular expression can be used to match more complicated pattern:
+##### 3.1.2. Regular expression can be used to match more complicated pattern:
 - We have seen before that backlash can be used to escape all metacharacters. It can also be followed by some different characters to signal different special sequences. For example, `\d` signals digital characters, `\D` signals non digital characters, `\s` signals whitespace character, `\S' signals non whitespace  characters, etc.
 
 Here is a [notebook searching for simple patterns](notebooks/simple_patterns.ipynb).
@@ -248,9 +248,9 @@ Here is a [notebook for finding_complicated_patterns](notebooks/finding_complica
 
 As we can see from above notebook, using regular expression to process txt file and extract info from scratch is difficult. Luckily we have the `beautifulsoup` library which can be used to directly process HTML website.
 
-#### Use `beautifulsoup` to process 10-Ks in HTML or XML format.
+#### 3.2. Use `beautifulsoup` to process 10-Ks in HTML or XML format.
 
-We can use the `beautifulsoup` constructor to parse a html website. 
+##### 3.2.1 We can use the `beautifulsoup` constructor to process the .html file. 
 
 - We can open a file as an open filehandle and pass it to the `BeautifulSoup` constructor to construct a BeautifulSoup object. And then we can access the html tags as an attribute of the object. We can also take the tag object as a dictionary and access the attributes of the tags using the attributes as a key. In addition, we can use the `get_text()` tag method to only get the content of a tag without its tag label.
 
@@ -261,7 +261,12 @@ Here is a [notebook for this process.](notebooks/navigating_the_parse_tree.ipynb
 Here is [an exercise notebook for it.](notebooks/coding_exercise.ipynb)
 
 
+##### 3.2.2. Use `requests` library to fetch website
 
+The BeautifulSoup library can process html.file, but it cannot access website directly. Thus we need to use the `requests` library to send web request and get the data from the website directly. The `requests.get()` method return an response object; the response object attribute `.text` return a string containing the html data. We can then pass the string of html data directly to the `BeautifulSoup` constructor to process it with a specific parser as sepcified above.
+
+Here is a notebook of [get html table and turn it into dataframe.](notebooks/requests_library.ipynb):
+we first use the `requests.get()` to fetch data from a website and get a response object, and then use `.text` attribute to get the data in string format. After that, we pass the string into the `BeautifulSoup` constructor and get a BeautifulSoup object. We then use the `find_all('table', class_='wikitable')` to get a list of wikitable. We take one wikitable and use the `find_all('tr')` to get a list of tr tags, we take the first tr tag and use `find_all('th')` to get a list of th tags. We loop over the list and use `get_text(strip = True, separator=" ")` to get the texts of each th tags. We store the text into a list and use it as the column of the dataframe. Then from the second tr object, similarly we get all td tags and its text as a list and take it as the rows of the dataframe.
 
   
   
