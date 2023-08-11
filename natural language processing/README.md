@@ -265,15 +265,21 @@ Here is [an exercise notebook for it.](notebooks/coding_exercise.ipynb)
 
 The BeautifulSoup library can process html.file, but it cannot access website directly. Thus we need to use the `requests` library to send web request and get the data from the website directly. The `requests.get()` method return an response object; the response object attribute `.text` return a string containing the html data. We can then pass the string of html data directly to the `BeautifulSoup` constructor to process it with a specific parser as sepcified above.
 
-Here is a notebook of [get html table and turn it into dataframe.](notebooks/requests_library.ipynb):
+Here is [a notebook of get html table and turn it into dataframe.](notebooks/requests_library.ipynb):
 we first use the `requests.get()` to fetch data from a website and get a response object, and then use `.text` attribute to get the data in string format. After that, we pass the string into the `BeautifulSoup` constructor and get a BeautifulSoup object. We then use the `find_all('table', class_='wikitable')` to get a list of wikitable. We take one wikitable and use the `find_all('tr')` to get a list of tr tags, we take the first tr tag and use `find_all('th')` to get a list of th tags. We loop over the list and use `get_text(strip = True, separator=" ")` to get the texts of each th tags. We store the text into a list and use it as the column of the dataframe. Then from the second tr object, similarly we get all td tags and its text as a list and take it as the rows of the dataframe.
 
   
   
-  
+### Basic NLP analysis
+#### Readibility of a document
+- length of sentences
+- syllables of words
 
 
+#### Sentiments
 
+
+#### Similarity
 
 
 
