@@ -1,6 +1,9 @@
 
 # Natural Language Processing
 
+## useful references:
+1. [sklearn user guide for text feature extraction](https://scikit-learn.org/stable/modules/feature_extraction.html#text-feature-extraction)
+
 **why use it?**
 
 Unlike math and computer language which is structured, human language are ambiguious and unstructured, which makes computer difficult to understand.  
