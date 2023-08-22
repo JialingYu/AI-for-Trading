@@ -26,7 +26,7 @@ The main idea of neural network is to combine different liear models to get a no
 
 A linear model is a continuous **perceptron** with input $x_1,\dots,x_n$, weights $w_1,\dots, w_n$ and bias $b$, and output $\sigma(w_1x_1+\dots+w_nx_n+b)$ where $\sigma$ is the sigmoid function $\sigma(x)=\frac{1}{1+e^{-x}}$.
 
-### Activation fucntion
+### Activation function
 #### logistic function
 Logistic function is defined as
 $$f(x)=\frac{L}{1+e^{-k(x-x_0)}}$$
@@ -48,3 +48,6 @@ When the neural network has more than 1 outcome, we can apply the softmax functi
 -back propagation: minimize the cost function using gradient descent to adjust the weights of each perceptron
 
 Here is [a notebook using neural network to predict student's admission to graduate school](notebooks/StudentAdmissions.ipynb)
+
+### training the neural network
+To prevent underfitting and overfitting, we can use the early stop algorithm to train the neural network, i.e., we stop the training when the testing error stop decreasing and start to increase.
