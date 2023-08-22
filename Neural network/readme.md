@@ -42,3 +42,9 @@ $$\sigma: \mathbb{R}^{n}\to (0,1)^{n}$$
 $$\sigma(x_i)=e^{x_i}/\sum^{n}_{i=1}e^{x_i}$$
 
 When the neural network has more than 1 outcome, we can apply the softmax function as the activation function and turn the outcome into the probability distribution.
+
+## Neural network architecture
+-feed forward: feed the data into multilayer perceptrons(multi layer linear model)
+-back propagation: minimize the cost function using gradient descent to adjust the weights of each perceptron
+
+Here is [a notebook using neural network to predict student's admission to graduate school](notebooks/StudentAdmissions.ipynb)
