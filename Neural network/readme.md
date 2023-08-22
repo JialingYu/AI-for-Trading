@@ -1,4 +1,7 @@
 # Neural Network
+## Notebooks
+
+- [a notebook for gradient descend]()
 
 ## Cost function(Loss function)
 In optimization, the objective function is usually to minimize the loss function, which is usually a globally differential function.  
