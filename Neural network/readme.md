@@ -21,7 +21,11 @@ where a is the base of the logarithm.
 The cross entropy of a discrete distribution q relative to a distribution p is 
 $$H(p,q)=-\sum p(x)log q(x)=E_p(-log q(x))$$
 
-## Neural network
+## Artificial Neural network
+There are two kinds of artificial neural network: feedforward neural network and recurrent neural network, charactered by the direction of flow of information between layers. The feed forward neural network is a unidirection neural work, meaning that information transfer from one layer to the next layer in order, with no cycle. And recurrent neural network is a bidirectional neural network, which means it allows output from a specific node to affect the input of the same node.
+
+Feed forward neural network is usually trained by back propagation, which is, we first feed the model with labeled data with some randomly initialized weights, and get the output; and then we measure the distance between the disired label and the output by cost function and try to minimize the cost function by adjusting the weights.
+
 The main idea of neural network is to combine different liear models to get a non linear model. 
 
 A linear model is a continuous **perceptron** with input $x_1,\dots,x_n$, weights $w_1,\dots, w_n$ and bias $b$, and output $\sigma(w_1x_1+\dots+w_nx_n+b)$ where $\sigma$ is the sigmoid function $\sigma(x)=\frac{1}{1+e^{-x}}$.
@@ -43,6 +47,15 @@ $$\sigma(x_i)=e^{x_i}/\sum^{n}_{i=1}e^{x_i}$$
 
 When the neural network has more than 1 outcome, we can apply the softmax function as the activation function and turn the outcome into the probability distribution.
 
+#### Hyperbolic tangent function and 
+Since the slope of the sigmoid function becomes very small when the variable is big or small enough, this makes gradient descent difficult when the derivative is so small. To solve this, we can choose other activation function such as the hyperbolic tangent function and the rectified linear unit(relu).
+
+The hyperbolic tangent function is defined as
+$$tanh(x)=\frac{e^x-e^{-x}}{e^x+e^{-x}}$$
+which ranges between -1 and 1.
+
+The relu function is defined as $relu(x)=x$ when $x\geq 0$ and $relu(x)=0$ when $x<0$.
+
 ## Neural network architecture
 -feed forward: feed the data into multilayer perceptrons(multi layer linear model)
 -back propagation: minimize the cost function using gradient descent to adjust the weights of each perceptron
@@ -51,3 +64,8 @@ Here is [a notebook using neural network to predict student's admission to gradu
 
 ### training the neural network
 To prevent underfitting and overfitting, we can use the early stop algorithm to train the neural network, i.e., we stop the training when the testing error stop decreasing and start to increase.
+
+
+# Deep learning with pytorch
+[An example of building a simple neural network in pytorch.](notebooks/Part 1 - Tensors in PyTorch (Exercises).ipynb)
+[A notebook of using pytorch to build a neural network with 2 hidden layers to train the MNIST data](notebooks/Part 2 - Neural Networks in PyTorch (Exercises).ipynb)
