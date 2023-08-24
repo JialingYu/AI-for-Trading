@@ -1,9 +1,9 @@
-# Trading with momentum project
+# Trading With Momentum Project
 [A notebook for the project](project_1_starter.ipynb)
-## main trading strategy
+## Main Trading Strategy
 > For each month-end observation period, rank the stocks by previous return, long the top performing stocks and short the bottom performing stocks.
 
-## project workflow
+## Project Workflow
 1. **load market data:**
 
    load the daily closing prices of stocks in S&P 500
@@ -27,5 +27,5 @@
 
    null hypothesis $H_0$: the mean of portfolio return from the signal is zero.
 
-## conclusion
+## Conclusion
 If we set the level of significant $\alpha = 0.05$, the computed p-value is 0.073359. Hence we can not reject the null hypothesis, which indicates the mean of the portfolio return of our signal is zero.
