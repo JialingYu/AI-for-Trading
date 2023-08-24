@@ -11,4 +11,12 @@ The hypothesis behind the strategy:
    - the liquidity traders seek to mitigate their losses by covering their position, and this magnify the move out of range.
    - the move out of range attract other investor who due to herd behaviour would build position strengthen the trend.
   
-## project workflow
+## Project Workflow
+- get the high, low and close price of each ticker and date
+- compute the high, low over a 50 days window
+- compute the long and short signal using breakout strategy:
+  generate a long signal(1) when the close price is higher than the 50-day highest price and generate a short signal(-1) when the close price is lower than the 50-day lowest price; do nothing in other cases.
+- filter out repeated long and short signals
+- compute lookahead price return and lookahead signal return
+- test for significance:
+  plot the histogram of the signal return, perform K-S test to find the outliers.
