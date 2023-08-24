@@ -69,8 +69,8 @@ To prevent underfitting and overfitting, we can use the early stop algorithm to 
 # Deep learning with pytorch
 [A notebook of building a simple neural network in pytorch.](notebooks/IntroductiontoDeepLearningwithPyTorch.ipynb)
 
-[A notebook of using pytorch to build a nueral network architechure to train the MNIST data](notebooks/NeuralnetworkswithPyTorch.ipynb)
+[A notebook of using pytorch to build a neural network architechure to train the MNIST data](notebooks/NeuralnetworkswithPyTorch.ipynb)
 
-[A note book of training the neural network using pytorch](notebooks/TrainingNeuralNetworks.ipynb)
+[A notebook of training the neural network using pytorch](notebooks/TrainingNeuralNetworks.ipynb)
 
-[Build aand train a neural nework for fashion.mnist data set](notebooks/Fashion-MNIST.ipynb)
+[A notebook of building and training a neural nework for fashion.mnist data set](notebooks/Fashion-MNIST.ipynb)
