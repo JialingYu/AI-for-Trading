@@ -11,7 +11,7 @@
 2. **resample the daily closing price into monthly closing price**
 3. **compute log returns:**
 
-   $R_t = \log_e P_t-\log_e P_{t-1}$ where $R_t$ is return at time $t$ and $P_t$ is closing price at time $t$
+   $$R_t = \log_e P_t-\log_e P_{t-1}$$ where $R_t$ is return at time $t$ and $P_t$ is closing price at time $t$
 4. **compute previous log returns and look-ahead log returns**
 
    shift the log return dataframe by 1 and -1
@@ -20,7 +20,7 @@
    rank the stocks by previous log returns, set the 10 top performing stocks with value 1 (i.e., long) and the 10 bottom performing stocks with value -1(i.e., short), other stocks with value 0(i.e., do not trade them)
 6. **compute portfolio return using trading signal and look-ahead log returns:**
    
-   $portfolio-return = \frac{trading-signal * look-ahead-log-return}{number-of-trading-stocks}$
+   $$portfolio-return = \frac{trading-signal * look-ahead-log-return}{number-of-trading-stocks}$$
 
 7. **compute the mean of the portfolio return**
 8. **perform T-test on the mean of portfolio return**
