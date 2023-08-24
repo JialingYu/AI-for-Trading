@@ -1,4 +1,4 @@
-# Trading With Momentum Project
+# Trading with Momentum Project
 [A notebook for the project](project_1_starter.ipynb)
 ## Main Trading Strategy
 > For each month-end observation period, rank the stocks by previous return, long the top performing stocks and short the bottom performing stocks.
