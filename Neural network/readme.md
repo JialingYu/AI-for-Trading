@@ -74,3 +74,7 @@ To prevent underfitting and overfitting, we can use the early stop algorithm to 
 [A notebook of training the neural network using pytorch](notebooks/TrainingNeuralNetworks.ipynb)
 
 [A notebook of building and training a neural nework for fashion.mnist data set](notebooks/Fashion-MNIST.ipynb)
+
+[A notebook of inference and validation of the trained neural network and solving overfitting using dropout]
+
+[A notebook of saving and loading the model]
