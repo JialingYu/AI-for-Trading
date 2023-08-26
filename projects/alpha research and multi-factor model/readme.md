@@ -24,9 +24,9 @@ predict the portfolio risk using the formula $\sqrt{X^{T}(BFB^{T}+S)X}$ where
 - F is the factor covariance matrix
 - S is the  idiosyncratic variance matrix
 
-### 3. Create alpha model
+### 3. Create an alpha model using 5 alpha factors
 
-We create the following alpha factors and then combine theem into a single alpha model.
+We create the following alpha factors and then combine them into a single alpha model.
 - Momentum 1 Year Factor
 - Mean Reversion 5 Day Sector Neutral Factor
 - Mean Reversion 5 Day Sector Neutral Smoothed Factor
@@ -54,10 +54,10 @@ use data `zipline.pipeline.data.USEquityPricing`
 #### Overnight Sentiment Smoothed Factor
 smooth the above factor using `zipline.pipeline.factors.SimpleMovingAverage`
 
-### 4. Evaluate alpha factors
+### 4. Evaluate the alpha factor
 - Quantile analysis: a good alpha factor should be monotonic in quantile
 - Turnoutover analysis: since trading costs, a good alpha should be stable, i.e, the alpha factor should not change much from period to period. We can measure this by [alphalens.performance.factor_rank_autocorrelation](https://quantopian.github.io/alphalens/alphalens.html?highlight=factor_rank_autocorrelation#alphalens.performance.factor_rank_autocorrelation)
-- Sharp ratio: calculate the sharp ratio of the factor return which is the mean of the return divided by the standard deviation of the return times the anualized factor.
+- Sharpe ratio: calculate the sharpe ratio of the factor return which is the mean of the return divided by the standard deviation of the return times the anualized factor.
 
 
 ### 5. Create portfolio using alpha model and risk model
