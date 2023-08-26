@@ -65,7 +65,7 @@ We create a portfolio which trades as close as to the alpha model while limiting
 
 use `CVXPY` python library for convex optimization.
 
-*onjective function:* 
+*objective function:* 
 - maximize $\alpha^{T}*x + \lambda||x||_{2}$ where $x$ is the portfolio weight, $\alpha$ is the alpha factor, and $\lambda$ is a regularization parameter. 
 
 *constraints:*
