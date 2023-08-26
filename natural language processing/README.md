@@ -1,7 +1,7 @@
 
 # Natural Language Processing
 
-## useful references:
+## Useful References:
 1. [sklearn user guide for text feature extraction](https://scikit-learn.org/stable/modules/feature_extraction.html#text-feature-extraction)
 
 **why use it?**
