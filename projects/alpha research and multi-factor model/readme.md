@@ -2,7 +2,7 @@
 Here is the [project notebook.](project_4_starter.ipynb)
 
 ## Main idea
-> create an alpha model and a risk model, and use them to construct a portfolio which trades as close as to the alpha model while limiting risk as measured by the risk model
+> create an alpha model and a risk model, and use them to construct a portfolio which trades as close as to the alpha model while limiting risk measured by the risk model
 
 ### Workflow
 1. create data bundle
