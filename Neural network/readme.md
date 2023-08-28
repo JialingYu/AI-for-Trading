@@ -66,7 +66,7 @@ Here is [a notebook using neural network to predict student's admission to gradu
 To prevent underfitting and overfitting, we can use the early stop algorithm to train the neural network, i.e., we stop the training when the testing error stop decreasing and start to increase.
 
 
-# Deep learning with pytorch
+## Deep learning with pytorch
 [A notebook of building a simple neural network in pytorch.](notebooks/IntroductiontoDeepLearningwithPyTorch.ipynb)
 
 [A notebook of using pytorch to build a neural network architechure to train the MNIST data](notebooks/NeuralnetworkswithPyTorch.ipynb)
@@ -78,3 +78,6 @@ To prevent underfitting and overfitting, we can use the early stop algorithm to 
 [A notebook of inference and validation of the trained neural network and solving overfitting using dropout]
 
 [A notebook of saving and loading the model]
+
+## Recurrent Neural network
+Different from traditional feedforward neural network(NN), which information only goes in one direction, reccurent neural network(RNN) has a loop which allows information to preceed so that we can use past information for present task. However, it turns out that standard reccurent neural network is only able to use the recent past information, i.e., it is only able to remember short term information. To address this isseue, we use a special kind of reccurent neural network--LSTM(long short term memory) network.
