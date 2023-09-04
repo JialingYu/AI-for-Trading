@@ -214,7 +214,19 @@ Meta characters specify special meaning and can not be searched directly. We nee
 Here is a [notebook for meta characters](notebooks/finding_metacharacters.ipynb)
 
 ##### 3.1.2. Regular expression can be used to match more complicated pattern:
-- We have seen before that backlash can be used to escape all metacharacters. It can also be followed by some different characters to signal different special sequences. For example, `\d` signals digital characters, `\D` signals non digital characters, `\s` signals whitespace character, `\S' signals non whitespace  characters, etc.
+- The first metacharacter we are going to look at is the backslash `(\)`. We already saw that the backslash can be used to escape all the metacharacters, so that you can search for them directly. However, the backslash can also be followed by various characters to signal various special sequences. Here is a list of the special sequences:
+
+`\d` - Matches any decimal digit; this is equivalent to the set `[0-9]`
+
+`\D` - Matches any non-digit character; this is equivalent to the set `[^0-9]`
+
+`\s` - Matches any whitespace character, this is equivalent to the set `[ \t\n\r\f\v]`
+
+`\S` - Matches any non-whitespace character; this is equivalent to the set `[^ \t\n\r\f\v]`
+
+`\w` - Matches any alphanumeric character and the underscore; this is equivalent to the set `[a-zA-Z0-9_]`
+
+`\W` - Matches any non-alphanumeric character; this is equivalent to the set `[^a-zA-Z0-9_]`
 
 Here is a [notebook searching for simple patterns](notebooks/simple_patterns.ipynb).
 
