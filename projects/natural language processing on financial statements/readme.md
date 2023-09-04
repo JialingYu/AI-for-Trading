@@ -14,7 +14,7 @@ We will access the SCC website to get the 10-k filings and extract key sections 
 
 
 ### read 10-k reports from a csv file
-- read the csv file into a pandas dataframe; 
+- read the csv file of 10-k reports from the US Securities and Exchange Commission into a pandas dataframe; 
 - get the text between the html label `<DOCUMENT>` and `</DOCUMENT>` using regular expression ;
 - get the document type after the html label `<TYPE>` using regular expression `<TYPE>[^\n]+`;
 - filter out non 10-k documents
@@ -35,10 +35,13 @@ We will access the SCC website to get the 10-k filings and extract key sections 
 -  get cosine similarities for each neighboring TFIDF vector/document
 
 ### evaluate alpha factor
-We take the cosine similarities as our alpha factor and evaluate it. This evaluation can also be applied to the Jaccard Similarity as well.
+We take the cosine similarities of every sentiments as our alpha factors and evaluate them. This evaluation can also be applied to the Jaccard Similarity as well.
 
 - get price data: get the yearly closing price data to run the factor against
 - convert the cosine_similarities dictionary into dataframe for alphalens to use
-- alphalens.utils.get_clean_factor_and_forward_returns
+- turn the factor data, price data into data suitably formatted for alphalens using `alphalens.utils.get_clean_factor_and_forward_returns`
+- get the factor return using `alphalens.performance.factor_returns`
+- Basis Points Per Day per Quantile: compute the quantile return of the alpha factor using `al.performance.mean_return_by_quantile()`. a good alpha factor should be monotonic in quantiles
+- turnover analysis: measure how stable an alpha factor is by Factor Rank Autocorrelation using `al.performance.factor_rank_autocorrelation()`
+- compute the sharpe ratio of the alpha factor of each sentiment
 
-- collect 10+k reports from the US Securities and Exchange Commission
