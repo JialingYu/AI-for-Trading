@@ -41,7 +41,7 @@ We take the cosine similarities of every sentiments as our alpha factors and eva
 - convert the cosine_similarities dictionary into dataframe for alphalens to use
 - turn the factor data, price data into data suitably formatted for alphalens using `alphalens.utils.get_clean_factor_and_forward_returns`
 - get the factor return using `alphalens.performance.factor_returns`
-- Basis Points Per Day per Quantile: compute the quantile return of the alpha factor using `al.performance.mean_return_by_quantile()`. a good alpha factor should be monotonic in quantiles
-- turnover analysis: measure how stable an alpha factor is by Factor Rank Autocorrelation using `al.performance.factor_rank_autocorrelation()`
+- Basis Points Per Day per Quantile: compute the quantile return of the alpha factor using `alphalens.performance.mean_return_by_quantile()`. a good alpha factor should be monotonic in quantiles
+- turnover analysis: measure how stable an alpha factor is by Factor Rank Autocorrelation using `alphalens.performance.factor_rank_autocorrelation()`
 - compute the sharpe ratio of the alpha factor of each sentiment
 
