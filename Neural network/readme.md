@@ -87,10 +87,10 @@ Different from traditional feedforward neural network(NN), which information onl
 
 ## Word Embeddings and word2vec
 
-Word embedding is a representation of a word using vector of real numbers(i.e., a mapping from words to vectors) which encodes the meaning of the words so that words that are closer in vector space has similar meanings.
+**Word embedding** is a representation of a word using vector of real numbers(i.e., a mapping from words to vectors) which encodes the meaning of the words so that words that are closer in vector space has similar meanings.
 
 Methods to generate the mapping include neural networks, dimension reduction, etc. Word embedding used as representation of inputs can boost the performance in NLP tasks like sentiment analysis.
 
-Word2vec is a group of models to produce word embedding. It uses a shallow, two layers neural network to learn the word association of a large corpus of texts. It takes the corpus as an input and produces a several hundred dimensional vector space with each unique word in the corpus associated with a vector in the vector space. The vectors are chosen carefully so that they reflect semantic and syntactic qualities of words. Thus we can use a simple math function such as cosine similarity to detect the level of semantic similarity of words.
+**Word2vec** is a group of models to produce word embedding. It uses a shallow, two layers neural network to learn the word association of a large corpus of texts. It takes the corpus as an input and produces a several hundred dimensional vector space with each unique word in the corpus associated with a vector in the vector space. The vectors are chosen carefully so that they reflect semantic and syntactic qualities of words. Thus we can use a simple math function such as cosine similarity to detect the level of semantic similarity of words.
 
-There are two architecture to produce the vectors: continuously sliding bag-of-words(CBOW) and continuously sliding skip-gram. In both architecture, word2vec considers both the word itself and a sliding context window as it iterates over the corpus.
+There are two architecture to produce the vectors: **continuously sliding bag-of-words(CBOW)** and **continuously sliding skip-gram**. In both architecture, word2vec considers both the word itself and a sliding context window as it iterates over the corpus.
