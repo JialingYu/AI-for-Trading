@@ -81,7 +81,8 @@ To prevent underfitting and overfitting, we can use the early stop algorithm to 
 
 ## Recurrent Neural network
 Different from traditional feedforward neural network(NN), which information only goes in one direction, reccurent neural network(RNN) has a loop which allows information to preceed so that we can use past information for present task. However, it turns out that standard reccurent neural network is only able to use the recent past information, i.e., it is only able to remember short term information. To address this isseue, we use a special kind of reccurent neural network--LSTM(long short term memory) network.
-[A notebook of building and training a character-level LSTM in PyTorch and using it for prediction]
+
+[A notebook of building and training a character-level LSTM in PyTorch and using it for prediction](notebooks/Character_Level_RNN.ipynb)
 
 
 ## Embeddings and word2vec
