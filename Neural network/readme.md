@@ -96,6 +96,7 @@ Methods to generate the mapping include neural networks, dimension reduction, et
 There are two architecture to produce the vectors: **continuously sliding bag-of-words(CBOW)** and **continuously sliding skip-gram**. In both architecture, word2vec considers both the word itself and a sliding context window as it iterates over the corpus.
 
 [A notebook of using PyTorch to implement the Word2Vec algorithm using the skip-gram architecture](notebooks/NegativeSamplingExercise.ipynb)
+
 Workflow for the notebook:
 - load the data
 - preprocess the data: convert the data into a list of tokens; create two dictionaries to convert words to integers and back again; subsampling the data
