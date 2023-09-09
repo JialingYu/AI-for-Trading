@@ -94,3 +94,12 @@ Methods to generate the mapping include neural networks, dimension reduction, et
 **Word2vec** is a group of models to produce word embedding. It uses a shallow, two layers neural network to learn the word association of a large corpus of texts. It takes the corpus as an input and produces a several hundred dimensional vector space with each unique word in the corpus associated with a vector in the vector space. The vectors are chosen carefully so that they reflect semantic and syntactic qualities of words. Thus we can use a simple math function such as cosine similarity to detect the level of semantic similarity of words.
 
 There are two architecture to produce the vectors: **continuously sliding bag-of-words(CBOW)** and **continuously sliding skip-gram**. In both architecture, word2vec considers both the word itself and a sliding context window as it iterates over the corpus.
+
+[A notebook of using PyTorch to implement the Word2Vec algorithm using the skip-gram architecture](notebooks/NegativeSamplingExercise.ipynb)
+Workflow for the notebook:
+- load the data
+- preprocess the data: convert the data into a list of tokens; create two dictionaries to convert words to integers and back again; subsampling the data
+- making batches: return batches of input and target data for our model, where the input is a word of the text and the target is the surrounding context over a window surrounding that word
+- create the SkipGram model
+- train and validate the model
+- improve the training efficiency of the model using negative sampling
