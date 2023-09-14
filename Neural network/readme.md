@@ -111,6 +111,7 @@ Workflow for the notebook:
 [A notebook using RNN to perform sentiment analysis on movie comments](notebooks/Sentiment_RNN_Exercise.ipynb)
 
 **Workflow of the notebook:**
+
 - load in and visualize the data: load in the reviews file and the labels file
 - data preprocessing:
     - lower the letters and remove punctuations; split the review strings into a list of reviews using separator '\n'; split the reviews into a list of words
