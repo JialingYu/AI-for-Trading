@@ -109,6 +109,7 @@ Workflow for the notebook:
 ## Sentiment Prediction RNN
 
 [A notebook using RNN to perform sentiment analysis on movie comments](notebooks/Sentiment_RNN_Exercise.ipynb)
+
 **Workflow of the notebook:**
 - load in and visualize the data: load in the reviews file and the labels file
 - data preprocessing:
@@ -116,4 +117,12 @@ Workflow for the notebook:
     - encode the words: create a dictionary map words to integers using `collections.Counter()`; convert the list of reviews into a list of lists of integers.
     - encode the labels: convert the labels into a list of zeros and ones
     - remove outliers: remove reviews has length 0, pad short reviews with 0 on the left and truncate long reviews; create a numpy array to store padded data in a standard shape
-    - 
+    - create training, validation and test sets
+    - create data loader and batch the data sets
+- create the sentiment network with pytorch
+    - build the embedding layer
+    - build the LSTM layer
+    - build the fully connected layer to map the data into the desire output_size
+    - build the sigmoid activation layer turning all output into value between 0 and 1
+- instantiate, train, validate, test the network
+- inference on the network using  unseen positive and negative test review
