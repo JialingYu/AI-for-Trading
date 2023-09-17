@@ -4,7 +4,7 @@
 
 
 ## Workflow
--load Twits data: load the json file of 1548010 labeled twits.
+- load Twits data: load the json file of 1548010 labeled twits.
 - preprocess the data:
     - remove ticker symbol, username, url since they do not provide sentiment;
     - tokenize and lemmatize the data
