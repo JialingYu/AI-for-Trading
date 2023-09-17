@@ -12,4 +12,7 @@
     - remove too often and too rare words from our data
     - balance the classes of our data so that each sentiment shows up as frequently in our data
     - convert tokens into integers so that we can pass to the neural network.
+- build a neural network: set up the embedding layer, the lstm layer, the dropout layer, the fully connected layer and the logsoftmax layer
+- build a data loader and split the data into training and validation set
+- train the network using training data
       
