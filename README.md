@@ -11,6 +11,9 @@ Advantages: easy to interpret, require little data preparation, can handle many 
 
 Disadvantage: low prediction accuracy, prone to overfitting
 
-Advantages of tree based data in financial analysis:
+Advantages of tree based method in financial analysis:
 no need to scale input data, robust to outlier, missing values and noisy data
-random forest:
+
+
+**random forest:**
+[Using random forest to predict whether a text message is spam or not](
