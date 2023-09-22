@@ -16,4 +16,4 @@ no need to scale input data, robust to outlier, missing values and noisy data
 
 
 **random forest:**
-[Using random forest to predict whether a text message is spam or not](
+[Using random forest to predict whether a text message is spam or not](decision tree and random forest/spam_randomforest.ipynb)
