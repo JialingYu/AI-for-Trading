@@ -58,3 +58,10 @@ An important problem when using machine learning algorithm on financial data is 
 - use a smaller bag of data
 - separate the data into unoverlapped groups, train classifiers on each group  separately and ensemble them together.
 
+### Feature importance
+
+[Feature importance method in sci-kit learn]
+
+[implement the simple version of the Tree Shap algorithm]
+
+
