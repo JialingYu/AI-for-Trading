@@ -60,8 +60,8 @@ An important problem when using machine learning algorithm on financial data is 
 
 ### Feature importance
 
-[Feature importance method in sci-kit learn]
+[Feature importance method in sci-kit learn](calculate_shap,ipynb)
 
-[implement the simple version of the Tree Shap algorithm]
+[implement the simple version of the Tree Shap algorithm](tree_shap.ipynb)
 
 
