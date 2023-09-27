@@ -60,8 +60,10 @@ An important problem when using machine learning algorithm on financial data is 
 
 ### Feature importance
 
-[Feature importance method in sci-kit learn](decision%20tree%20and%20random%20forest/calculate_shap.ipynb)
+One way of interpreting the model is by calculating how much each feature contributed to the model prediction, which is called feature importance. By studying feature importance we can figure out which feature is important for the prediction and which feature is not. Then we can abandon those irrelevant features and focus our energy on those significant features. By doing this we can enhance our model's performance. There are many wawys to calculate feature importance and the current state of the art is the shapley additive explanation. The feature importance in sklearn is calculated by the weighted difference of the gini impurity of the parent node and the gini impurity of the left and right child nodes on which the feature split. And the weights are given by the number of data points in each node. but this way of computing feature importance is inconsistent since it gives more importance to features used to split nodes far away from the root, which motivates the use of current feature attribution method -- Shapley Additive Explanations. The method comes from coalition game theory. The idea of this method is to calculate the feature importance by seeing how well the model perform with and without the feature for every data point. So this method calculates the feature importance for each individual data point(the local feature importance). We can calculate the global feature importance by aggregating each local feature importance.
 
-[implement the simple version of the Tree Shap algorithm](decision%20tree%20and%20random%20forest/tree_shap.ipynb)
+[The notebook of calculating Shapley values](decision%20tree%20and%20random%20forest/calculate_shap.ipynb)
+
+[Implement the simple version of the Tree Shap algorithm to train and reuse a single tree model based onScott Lundberg's paper Consistent Individualized Feature Attribution for Tree Ensembles](decision%20tree%20and%20random%20forest/tree_shap.ipynb)
 
 
