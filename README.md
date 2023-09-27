@@ -47,7 +47,7 @@ Sector is a major factor that affects stock movement. The sector or industry cla
 
 #### Date 
 
-Date can be an important factor for forward return. For example, during the start and end of each day, month, year, the stock market will have some irregular behaviour due to human factor.
+Date can be an important factor for forward return which captures trader/investor behavior due to calendar anomalies. For example, during the start and end of each day, month, year, the market will behave irregularly due to huaman factor.
 
 ### Overlapping labels
 
