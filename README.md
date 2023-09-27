@@ -53,7 +53,7 @@ Date can be an important factor for forward return. For example, during the star
 
 An important problem when using machine learning algorithm on financial data is that the data are correlated. For example, if we use the weekly returns as labels, they are correlated since the data used to calculate the weekly return of neighboring days are overlapped. And we know that for supervised machine learning algorithm it is important that the training data are independent identically distributed, so that the model can have good generalization. For example, when we use random forest, it is important that the data are i.i.d so that the trees that we generate are different. For correlated data, we can only generate correlated trees, which would increase the rate of classification error meade by the forest. In addition, when peerforming out of bag testing, the data that we used to test are also correlated with the data that we used to train, and thus inflate the performance of the random forest on the testing data.
 
-**Solutions** [solving overlapping labels]
+**Solutions** [solving overlapping labels](decision tree and random forest/dependent_labels.ipynb)
 - only use unoverlapped data
 - use a smaller bag of data
 - separate the data into unoverlapped groups, train classifiers on each group separately and ensemble them together.
