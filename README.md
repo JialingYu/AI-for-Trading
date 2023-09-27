@@ -18,7 +18,7 @@ no need to scale input data, robust to outlier, missing values and noisy data
 
 
 ### Random forest:
-[Using random forest to predict whether a text message is spam or not](decision tree and random forest/spam_randomforest.ipynb)
+[Using random forest to predict whether a text message is spam or not](decision%20tree%20and%20random%20forest/spam_randomforest.ipynb)
 
 ### Feature engineering
 
