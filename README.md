@@ -70,3 +70,42 @@ One way of interpreting the model is by calculating how much each feature contri
 ## Backtesting
 A backtesing is said to be valid if it satisfies at least 1)the profit calculation is realistic, i.e., the simulated profit and loss can actually be acheived by trading the same instruments the same way the backtest code indicated. 2) the startegy constructed does not benefit from look ahead bias or from hindsight.
 
+### Time delay
+
+
+### Transaction cost
+
+For institutional traders, the transaction cost is due to the impact a trade has on the market price of the asset being bought or sold. 
+
+#### Linear impact model
+
+We assume that there is a linear relation between the transaction size(percentage of the average daily volume) and the percent change in price, and we assume that 1% of average daily volume traded will result in 10 basis point (10/10000 = 0.1%) change in price, i.e., we have 
+
+ % change in price/ trade size = 10 basis point/ 1% of average daily volume 
+
+ We can deduce that 
+ transaction cost = \sum \lambda_i(h_{i,t}-h_{i,t-1}) where h_{i,t} is the holding of stock i at time t.
+
+ #### Square root model
+ [Crossover from Linear to Square-Root Market Impact](https://arxiv.org/pdf/1811.05230.pdf)
+
+ ### Optimization with transaction cost
+
+ Define objective function and its gradient, input these into an optimizer.
+
+ Optimizer to choose from:
+ - L-BFGS: designed to more efficiently handle large scale problem
+ - Powell
+ - Nelder-Mead
+ - Conjugate gradient
+
+[Reference on the various optimizers that are available in scipy](http://scipy-lectures.org/advanced/mathematical_optimization/)
+
+[Insightful explanation of various optimization algorithms](http://web.stanford.edu/class/ee364b/lectures.html)
+
+
+### Interpretation of profit and loss of alpha(performance attribution)
+
+### Portfolio optimization with transaction cost
+[A notebook of portfolio optimization with transaction costs]
+
