@@ -107,5 +107,5 @@ We assume that there is a linear relation between the transaction size(percentag
 ### Interpretation of profit and loss of alpha(performance attribution)
 
 ### Portfolio optimization with transaction cost
-[A notebook of portfolio optimization with transaction costs]
+[A notebook of portfolio optimization with transaction costs](Backtesting/optimization_with_tcosts.ipynb)
 
