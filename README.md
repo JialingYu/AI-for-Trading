@@ -3,7 +3,7 @@ This is a github repo containing my notes and the projects that I've done for th
 
 
 
-## 7. Combining Signals for Enhanced Alpha [project notebook](projects/Combine%20Signals%20for%20Enhanced%20Alpha/project_7_starter.ipynb)
+## 7. Combining Signals for Enhanced Alpha [project](projects/Combine%20Signals%20for%20Enhanced%20Alpha/project_7_starter.ipynb)
 
 ### Decision tree: 
 
