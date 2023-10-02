@@ -21,3 +21,5 @@ Use performance attribution to identify the major drivers of the portfolio's PnL
 - construct the objective function: minimizing the common risk(risk comes from common risk factors), special risk(risk comes from special variance, maximizing the expected return(return comes from the alpha factors), minimizing the transaction cost
 - compute the gradient of the objective function
 - perform portfolio optimization using 'scipy.optimize.fmin_l_bfgs_b(func = objective function, x0 = initial holding, fprime = gradient)'
+- compute the profit and loss attribution: attribution to the alpha factors and risk factors are the products of the factor returns and factor exposure and the holding respectively
+- build_portfolio_characteristics: calculate the sum of long positions, short positions, net positions, gross market value, and amount of dollars traded
