@@ -10,7 +10,7 @@
 
 ## Project Workflow
 1. select large dollar volume stocks, load and view their close prices and volume
-2. construct a smart beta portfolio:
+2. construct a smart beta portfolio weighted by total dividend yield over time
    - compute the index weights based on dollar volume traded on that day
    - compute the portfolio weights based on total dividend yield over time
    - generate the return data for all the stocks and dates
