@@ -22,6 +22,7 @@ The hypothesis behind the strategy:
   - plot the histogram of the signal return
   - perform K-S test to find the outliers: compare the distribution of the signal return of each stock and the normal distribution of the signal return of all stocks with the general mean and standard deviation using 'scipy.stats.kstest'.
   - get the outliers: get those stocks whose p value is smaller than the p value threshold and Ks value above the ks value threshold.
+  - compare the 5, 10, and 20 day signals returns without outliers to normal distributions
 
 
 ## Alpha research process
