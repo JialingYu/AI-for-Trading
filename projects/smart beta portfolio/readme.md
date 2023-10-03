@@ -4,9 +4,9 @@
 ## Project Contents
 > Smart beta ETFs can be designed by two general methods：alternative weighting and minimum volatility. In this project, we build two kinds of smart beta portfolios using these two kinds of methods. 
 >
-> We first build a smart beta ETF depending on the dividends issuing situation of the company. The hypothesis is that dividends-issuing stocks tend to perform better than stocks that do not, since companies that issue dividends regularly might have better financial situation and act in the best interest of their shareholders.
+> We first build a smart beta ETF weighted by the dividends issuing situation of the company. The hypothesis is that dividends-issuing stocks tend to perform better than stocks that do not, since companies that issue dividends regularly might have better financial situation and act in the best interest of their shareholders.
 >
-> Then we build another portfolio which tracks the market capital index closely, while also minimizing the portfolio volatility. Finally, we rebalance the portfolio overtime and analyse the portfolio turnover.
+> Then we build another portfolio weighted by realizing the goal of tracking the market capital index closely, while also minimizing the portfolio volatility. Finally, we rebalance the portfolio overtime and analyse the portfolio turnover.
 
 ## Project Workflow
 1. select large dollar volume stocks, load and view their close prices and volume
