@@ -47,7 +47,7 @@ smooth the above using `zipline.pipeline.factors.SimpleMovingAverage`
 
 
 #### Overnight Sentiment Factor
-hypothesis: stocks with high (low) overnight returns underperform (outperform) over the longer-term
+hypothesis: overnight return can be used to measure firm-specific investor sentiment, and stocks with high (low) overnight returns underperform (outperform) over the longer-term due to sentiment driven mispricing
 from the paper: [Overnight Returns and Firm-Specific Investor Sentiment](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2554010)
 use data `zipline.pipeline.data.USEquityPricing`
 
