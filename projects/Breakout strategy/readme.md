@@ -1,5 +1,5 @@
 # Breakout Strategy Project
-[Notebook for the project](project_2_starter.ipynb)
+[Notebook for the project](project_2_with_graph.ipynb)
 
 ## Main Trading Strategy
 >Long the stocks whose close price is higher than its highest close price over the past 50 days, and short the stocks whose close price is lower than the lowest close price over the past 50 days.
