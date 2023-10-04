@@ -1,5 +1,7 @@
 # Sentiment Analysis With Neural Networks
 
+## Description
+
 > build a sentiment analysis model that will learn to assign sentiment to twits on social media site StockTwits on its own using labeled data.
 
 
