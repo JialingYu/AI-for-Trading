@@ -83,7 +83,7 @@ One way of interpreting the model is by calculating how much each feature contri
 [Implement the simple version of the Tree Shap algorithm to train and reuse a single tree model based onScott Lundberg's paper Consistent Individualized Feature Attribution for Tree Ensembles](decision%20tree%20and%20random%20forest/tree_shap.ipynb)
 
 
-## 8. Backtesting [Project](https://github.com/JialingYu/AI-for-Trading/blob/main/Backtesting/optimization_with_tcosts.ipynb)
+## 8. Backtesting [Project](https://github.com/JialingYu/AI-for-Trading/blob/main/projects/backtesting/project_8_with_graph.ipynb)
 A backtesing is said to be valid if it satisfies at least 1)the profit calculation is realistic, i.e., the simulated profit and loss can actually be acheived by trading the same instruments the same way the backtest code indicated. 2) the startegy constructed does not benefit from look ahead bias or from hindsight.
 
 ### Time delay
