@@ -1,6 +1,19 @@
 # Artificial Intelligent for Trading
 This is a github repo containing my notes and the projects that I've done for the Udacity nano degree program 'AI for trading'.
 
+Topics: 
+
+**Quantitative Trading**
+Financial portfolio risk models • Financial trading • Financial portfolio optimization • Alpha research • Quant workflow • Cvxpy • Alpha signals • Recurrent neural networks • Financial indices • Time-series analysis with ML • Alpha generation • Particle filters • Volatility clustering • Arma • Kalman filters • Factor investing • Stock return factor models • Adjusting for corporate actions • Outlier analysis • Data pre-processing • Return calculation • Arima • Garch models • Etfs • Statistical regression
+
+
+**AI Algorithms in Trading**
+• Word2vec • Feature engineering • Recurrent neural networks • Word embeddings • Text generation • Data scraping • PyTorch • Gradient descent • Text pre-processing • Decision trees • Random forest models • NLP for finance • Financial portfolio theory • Tf-idf • Data ingestion • Overfitting prevention • Glove • Feature importance calculation • Sentiment analysis • Backtesting • NLP pipelines • Financial portfolio optimization • Sequential data analysis • Bag of words • AI algorithms in Python • Investment performance attribution • Training neural networks • Backpropagation • Model performance metrics
+
+
+**Jupyter Notebook, Numpy, and Pandas**
+• Pandas • NumPy • Anaconda • Jupyter notebooks • Python package management • matplotlib • AI algorithms in Python
+
 
 
 ## 7. Combining Signals for Enhanced Alpha [project](projects/Combine%20Signals%20for%20Enhanced%20Alpha/project_7_starter.ipynb)
