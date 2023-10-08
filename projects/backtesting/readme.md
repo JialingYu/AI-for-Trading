@@ -1,5 +1,7 @@
 # Backtesting
 
+[Project notebook](https://github.com/JialingYu/AI-for-Trading/blob/main/projects/backtesting/project_8_with_graph.ipynb)
+
 Build a realistic backtest using Barrad data which perform portfolio optimization by minimizing common risk, special risk, transaction cost and maximizing expected return.
 
 Use performance attribution to identify the major drivers of the portfolio's PnL.
